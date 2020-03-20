@@ -13,8 +13,6 @@ import * as serviceWorker from './serviceWorker';
 
 
 const store = Store();
-
-console.log(getExpenses);
 const jsx = (
     <Provider store={store}>
         <App />
