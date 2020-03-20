@@ -13,11 +13,7 @@ import * as serviceWorker from './serviceWorker';
 
 
 const store = Store();
-store.dispatch(addExpense({ description: "water bill", amount: 300, createdAt: 20000 }));
-store.dispatch(addExpense({ description: "gas bill", amount: 800, createdAt: 2000 }));
 
-const state = store.getState()
-const getExpenses = getVisibleExpenses(state.expenses, state.filters)
 console.log(getExpenses);
 const jsx = (
     <Provider store={store}>
