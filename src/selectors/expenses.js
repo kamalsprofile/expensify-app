@@ -18,4 +18,4 @@ export default (expenses, { text, sortBy, endDate, startDate }) => {
             return a.description > b.description ? 1 : -1;
         }
     })
-}
+};

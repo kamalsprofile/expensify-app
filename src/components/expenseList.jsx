@@ -5,16 +5,19 @@ import filteredExpenseList from '../selectors/expenses'
 import FilterText from './filterText';
 import SortBy from './sortBy';
 import FilterByDates from './filterByDates'
+import numeral from 'numeral';
+import ExpensesInfo from './expensesInfo'
 
 
 const ExpenseList = (props) => {
     return (
         <div>
-            <h1>Expense List</h1>
+            <ExpensesInfo />
             < FilterText />
             <SortBy />
             <FilterByDates />
             {props.expenses.map(expense => (<ExpenseListItem key={expense.id} {...expense} />)
+
 
             )}
         </div>
@@ -23,7 +26,8 @@ const ExpenseList = (props) => {
 
 const connectedComponent = (state) => {
     return {
-        expenses: filteredExpenseList(state.expenses, state.filters)
+        expenses: filteredExpenseList(state.expenses, state.filters),
+
     }
 }
 
