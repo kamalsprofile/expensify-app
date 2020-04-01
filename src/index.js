@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Store from './configureStore/store';
-import { addExpense } from './actions/expenses';
+import { startSetExpenses } from './actions/expenses';
 import { setFilterText } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
-
+import './firebase/firebase';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
@@ -18,8 +18,11 @@ const jsx = (
         <App />
     </Provider>
 )
+ReactDOM.render(<p>Loading</p>, document.getElementById('root'));
+store.dispatch(startSetExpenses()).then(() => {
+    ReactDOM.render(jsx, document.getElementById('root'));
+})
 
-ReactDOM.render(jsx, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

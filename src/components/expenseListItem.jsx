@@ -7,7 +7,7 @@ import numeral from 'numeral';
 
 const ExpenseListItem = (props) => {
     const { description, amount, note, createdAt, id } = props
-    console.log(props)
+
 
     return (
         <div>

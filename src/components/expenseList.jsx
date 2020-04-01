@@ -16,10 +16,12 @@ const ExpenseList = (props) => {
             < FilterText />
             <SortBy />
             <FilterByDates />
-            {props.expenses.map(expense => (<ExpenseListItem key={expense.id} {...expense} />)
+            {
+
+                props.expenses.map(expense => (<ExpenseListItem key={expense.id} {...expense} />)
 
 
-            )}
+                )}
         </div>
     );
 }
