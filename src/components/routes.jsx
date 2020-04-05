@@ -1,21 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import Help from './help';
 import CreateExpense from './createExpense';
-import Header from './header';
 import EditExpense from './editExpense';
+import LogIn from './logIn';
+import { createBrowserHistory } from 'history/esm/history';
+import PrivateRoute from './privateRoutes'
 
 
+export const history = createBrowserHistory();
 const Routes = () => {
+
     return (
-        <Router>
-            <Header />
+        <Router history={history}>
+
             <Switch>
-                <Route path="/" exact={true} component={Home} />
-                <Route path="/CreateExpense" component={CreateExpense} />
-                <Route path="/edit/:id" component={EditExpense} />
-                <Route path="/help" component={Help} />
+                <Route path="/" exact={true} component={LogIn} />
+                <PrivateRoute path="/dashboard" component={Home} />
+                <PrivateRoute path="/CreateExpense" component={CreateExpense} />
+                <PrivateRoute path="/edit/:id" component={EditExpense} />
+                <PrivateRoute path="/help" component={Help} />
             </Switch>
 
 

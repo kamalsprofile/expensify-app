@@ -10,7 +10,7 @@ const CreateExpense = (props) => {
             <h1>Create Expense</h1>
             <ExpenseForm onSubmit={(expense) => {
                 props.dispatch(addExpenseFunction(expense))
-                props.history.push("/")
+                props.history.push("/dashboard")
             }} />
 
         </div>

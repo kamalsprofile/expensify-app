@@ -14,7 +14,8 @@ class ExpenseForm extends Component {
             amount: props.expense ? (props.expense.amount / 100).toString() : "",
             createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
             calenderFocused: false,
-            error: ""
+            error: "",
+            isUpdate: props.expense ? "Update" : "Add"
         }
     }
 
@@ -92,7 +93,7 @@ class ExpenseForm extends Component {
                     value={this.state.note}
                 >
                 </textarea>
-                <button onSubmit={this.addExpense} >Add Expense</button>
+                <button onSubmit={this.addExpense} >{this.state.isUpdate}</button>
             </form>
         );
     }
