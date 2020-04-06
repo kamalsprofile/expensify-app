@@ -7,6 +7,8 @@ import EditExpense from './editExpense';
 import LogIn from './logIn';
 import { createBrowserHistory } from 'history/esm/history';
 import PrivateRoute from './privateRoutes'
+import PublicRoute from './publicRutes';
+
 
 
 export const history = createBrowserHistory();
@@ -14,9 +16,8 @@ const Routes = () => {
 
     return (
         <Router history={history}>
-
             <Switch>
-                <Route path="/" exact={true} component={LogIn} />
+                <PublicRoute path="/" exact={true} component={LogIn} />
                 <PrivateRoute path="/dashboard" component={Home} />
                 <PrivateRoute path="/CreateExpense" component={CreateExpense} />
                 <PrivateRoute path="/edit/:id" component={EditExpense} />

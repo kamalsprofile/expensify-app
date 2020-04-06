@@ -9,7 +9,9 @@ export const addExpense = (expense) => ({
 });
 
 export const addExpenseFunction = (newExpense = {}) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.user_ID
+        console.log(uid)
         const { description = '', note = '', amount = 0, createdAt = 0 } = newExpense;
         const expense = {
             description,
@@ -17,7 +19,7 @@ export const addExpenseFunction = (newExpense = {}) => {
             amount,
             createdAt
         }
-        database.ref("expenses")
+        database.ref(`users/${uid}/expenses`)
             .push(expense)
             .then((ref) => {
                 dispatch(addExpense({
@@ -36,8 +38,9 @@ export const removeExpense = ({ id }) =>
         id
     })
 export const startRemoveExpense = ({ id }) => {
-    return (dispatch) => {
-        return database.ref(`expenses/${id}`).remove().then(() => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.user_ID
+        return database.ref(`users/${uid}/expenses/${id}`).remove().then(() => {
             dispatch(removeExpense({ id }))
         })
     }
@@ -56,8 +59,9 @@ export const editExpense = ({ id }, updates) => {
 }
 export const startEditExpense = ({ id }, updates) => {
 
-    return (dispatch) => {
-        return database.ref(`expenses/${id}`).update(updates).then(() => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.user_ID
+        return database.ref(`users/${uid}/expenses/${id}`).update(updates).then(() => {
             dispatch(editExpense({ id }, updates))
         })
     }
@@ -71,9 +75,10 @@ export const setExpenses = (expenses) => ({
 })
 export const startSetExpenses = () => {
 
-    return (dispatch) => {
-
-        return database.ref("expenses")
+    return (dispatch, getState) => {
+        const uid = getState().auth.user_ID;
+        console.log("id", uid)
+        return database.ref(`users/${uid}/expenses`)
             .once('value')
             .then((snapShot) => {
                 const expenses = []

@@ -4,7 +4,6 @@ import ExpenseList from './expenseList';
 
 const Home = () => {
     return (<div>
-
         <ExpenseList />
     </div>);
 }
