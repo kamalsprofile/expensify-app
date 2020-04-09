@@ -6,7 +6,7 @@ class LogIn extends Component {
     state = {}
     render() {
         return (
-            <div>
+            <div className="box-layout">
                 <p>
                     LogIn
                 </p>

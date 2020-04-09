@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/components/styles.scss';
 import App from './App';
 import Store from './configureStore/store';
 import { startSetExpenses } from './actions/expenses';
