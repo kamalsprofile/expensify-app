@@ -13,15 +13,23 @@ const ExpenseList = (props) => {
     return (
         <div>
             <ExpensesInfo />
-            < FilterText />
-            <SortBy />
-            <FilterByDates />
-            {
+            <div className="container">
 
-                props.expenses.map(expense => (<ExpenseListItem key={expense.id} {...expense} />)
+                <div className="filters-container">
+                    <div className="filters-item">< FilterText /></div>
+                    <div className="filters-item"><SortBy /></div>
+                    <div className="filters-item"><FilterByDates /></div>
+                </div>
+
+                {
+
+                    props.expenses.map(expense => (<ExpenseListItem key={expense.id} {...expense} />)
 
 
-                )}
+                    )}
+
+            </div>
+
         </div>
     );
 }

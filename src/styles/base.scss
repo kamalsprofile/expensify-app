@@ -1,0 +1,23 @@
+*{
+    padding:0;
+    margin:0 
+}
+html{
+    font-size: 62%;
+    
+}
+body{
+    color: #333;
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+.btn{
+    cursor: pointer;
+}
+button:disabled, .btn:disabled{
+    cursor: default;
+}
+.is-active{
+    font-weight: bold;
+}

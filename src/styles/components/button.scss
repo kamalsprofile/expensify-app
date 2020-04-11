@@ -1,0 +1,37 @@
+.btn-login:link, .btn-login:visited{
+   
+}
+.btn-login{
+    background: #009999;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    margin-top: 100px;
+    border-radius: 100px;
+    box-shadow: 0 5px 9px black;
+    transition: all .2s
+}
+.btn-login:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px black
+}
+.btn-login:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 9px black;
+}
+.btn-add-expense{
+    background: #3CB371;
+    color: #fff;
+    padding: 15px 40px;
+    margin-top: 100px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.btn-log-out{
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+}
+.btn-log-out:hover{
+    cursor: pointer;
+}

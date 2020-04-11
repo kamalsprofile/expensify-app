@@ -7,13 +7,16 @@ class LogIn extends Component {
     render() {
         return (
             <div className="box-layout">
-                <p>
-                    LogIn
-                </p>
-                <button onClick={() => {
-                    this.props.startLogin()
-                    // this.props.history.push("/dashboard")
-                }}>LogIn</button>
+                <div className="login-box">
+                    <h1 className="login-layout__title">Expensify App</h1>
+                    <p>Control your expeses easily</p>
+                    <a className='btn btn-login' onClick={() => {
+                        this.props.startLogin()
+                        // this.props.history.push("/dashboard")
+                    }}>Log In</a>
+                </div>
+
+
             </div>
         );
     }
