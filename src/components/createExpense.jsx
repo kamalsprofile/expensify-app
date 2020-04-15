@@ -7,7 +7,11 @@ import { addExpenseFunction } from '../actions/expenses'
 const CreateExpense = (props) => {
     return (
         <div>
-            <h1>Create Expense</h1>
+            <div className="summary-content">
+                <div className="container">
+                    <h1>Create Expense</h1></div>
+            </div>
+
             <ExpenseForm onSubmit={(expense) => {
                 props.dispatch(addExpenseFunction(expense))
                 props.history.push("/dashboard")

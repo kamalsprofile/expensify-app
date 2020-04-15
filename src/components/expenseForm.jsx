@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css'
+import Button from '@material-ui/core/Button';
 
 
 class ExpenseForm extends Component {
@@ -64,37 +65,66 @@ class ExpenseForm extends Component {
     render() {
 
         return (
-            <form onSubmit={this.formSubmitted}>
-                {this.state.error && <p>{this.state.error}</p>}
-                <input
-                    type="text"
-                    autoFocus
-                    placeholder="Description"
-                    value={this.state.description}
-                    onChange={this.descriptionChange}
-                />
-                <input
-                    type="text"
-                    placeholder="Amount"
-                    value={this.state.amount}
-                    onChange={this.amountChange}
-                />
-                <SingleDatePicker
-                    date={this.state.createdAt}
-                    onDateChange={this.dateChangeHandler}
-                    focused={this.state.calenderFocused}
-                    onFocusChange={this.focuseChangeHandler}
-                    numberOfMonths={1}
-                    isOutsideRange={() => false}
-                />
-                <textarea
-                    placeholder="Add note (optional)"
-                    onChange={this.noteCahnge}
-                    value={this.state.note}
-                >
-                </textarea>
-                <button onSubmit={this.addExpense} >{this.state.isUpdate}</button>
-            </form>
+            <div className="container">
+                <form className="expense-form" onSubmit={this.formSubmitted}>
+                    {this.state.error && <p>{this.state.error}</p>}
+                    <div className="form-Item">
+                        <div className="group">
+                            <input type="text" type="text"
+                                autoFocus
+                                placeholder="Description"
+                                value={this.state.description}
+                                onChange={this.descriptionChange} />
+                            <span className="highlight"></span>
+                            <span className="bar"></span>
+                        </div>
+
+                    </div>
+                    <div className="form-Item">
+                        <div className="group">
+                            <input type="text" type="text"
+                                type="text"
+                                placeholder="Amount"
+                                value={this.state.amount}
+                                onChange={this.amountChange} />
+                            <span className="highlight"></span>
+                            <span className="bar"></span>
+                        </div>
+                    </div>
+
+
+                    <div className="form-Item">
+                        <div className="group">
+                            <input type="text" type="text"
+                                placeholder="Add note (optional)"
+                                onChange={this.noteCahnge}
+                                value={this.state.note} />
+                            <span className="highlight"></span>
+                            <span className="bar"></span>
+                        </div>
+
+                    </div>
+                    <div className="form-Item">
+                        <div className="date-picker">
+                            <SingleDatePicker
+                                date={this.state.createdAt}
+                                onDateChange={this.dateChangeHandler}
+                                focused={this.state.calenderFocused}
+                                onFocusChange={this.focuseChangeHandler}
+                                numberOfMonths={1}
+                                isOutsideRange={() => false}
+                            />
+
+                        </div>
+
+                    </div>
+                    <div className="btn-expense">
+                        <a className="btn-form-expense" onClick={this.formSubmitted} >{this.state.isUpdate}</a>
+                    </div>
+
+                </form>
+            </div >
+
         );
     }
 }

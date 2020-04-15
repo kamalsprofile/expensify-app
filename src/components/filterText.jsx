@@ -24,11 +24,14 @@ const CssTextField = withStyles({
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        flexWrap: 'wrap',
+        flexWrap: 'wrap'
     },
     margin: {
         margin: theme.spacing(1),
     },
+    resize: {
+        fontSize: 15
+    }
 }));
 const theme = createMuiTheme({
     palette: {
@@ -41,7 +44,11 @@ const FilterText = (props) => {
     return (
         <div className="text-filters">
             <ThemeProvider theme={theme}>
-                <TextField className={classes.margin} fullWidth id="outlined-basic" label="Search Expenses" variant="outlined" value={props.filters.text} onChange={(e) => {
+                <TextField className={classes.margin} InputProps={{
+                    classes: {
+                        input: classes.resize,
+                    },
+                }} fullWidth id="outlined-basic" label="Search Expenses" variant="outlined" value={props.filters.text} onChange={(e) => {
                     props.dispatch(setFilterText(e.target.value))
                 }} />
             </ThemeProvider>

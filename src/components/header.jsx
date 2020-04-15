@@ -9,7 +9,7 @@ const Header = ({ logOut }) => {
 
             <div className="container">
                 <div className="header-content">
-                    <Link className="logo" to="/dashboard" exact={true}>
+                    <Link className="logo" to="/dashboard" >
                         <h1>Expensify</h1>
                     </Link>
                     <a className="btn-log-out" onClick={logOut}>Log Out</a>

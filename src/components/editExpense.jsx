@@ -8,7 +8,14 @@ const EditExpense = (props) => {
     console.log(props)
     return (
         <div>
-            <p> we are going to edit this item {props.match.params.id} </p>
+
+
+            <div className="summary-content">
+                <div className="container">
+                    <h1>Edit Expense</h1>
+                    <p> editing <strong>{props.expense.description}</strong>  expense</p>
+                </div>
+            </div>
             <ExpenseForm
                 expense={props.expense}
                 onSubmit={(updatedExpense) => {
@@ -17,12 +24,15 @@ const EditExpense = (props) => {
                     props.history.push("/")
                 }}
             />
-            <button onClick={() => {
-                const id = props.match.params.id
-                props.dispatch(startRemoveExpense({ id }))
-                props.history.push("/dashboard")
+            <div className="btn-expense">
+                <a className="btn-form-expense" style={{ background: "red" }} onClick={() => {
+                    const id = props.match.params.id
+                    props.dispatch(startRemoveExpense({ id }))
+                    props.history.push("/dashboard")
 
-            }}>Remove</button>
+                }}>Remove</a>
+            </div>
+
         </div>
 
     );

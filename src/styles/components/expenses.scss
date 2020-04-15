@@ -1,0 +1,43 @@
+.list-header{
+
+    display: flex;
+    justify-content: space-between;
+    background-color: #fafafa;
+    border:1px solid #ccc;
+    padding:10px 40px;
+    color:#777;
+}
+.list-item{
+    border: 1px solid #ccc;
+    border-top: none;
+    display:flex;
+    flex-direction: column;
+    padding: 40px;
+    text-decoration: none;
+    color: rgb(77, 73, 73);
+    transition: background .3s ease;
+    &:hover{
+        cursor: pointer;
+        background: #fafafa
+    }
+    @media (min-width:45rem) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 40px;
+    }
+}
+.expense-list{
+    margin-bottom: 50px
+}
+.list-item-title{
+word-break: break-all
+}
+.list-item-sub-title{
+    color: #777;
+    font-size: 12px
+}
+.no-expenses{
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+}

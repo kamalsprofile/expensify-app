@@ -10,6 +10,7 @@ import { firebase } from './firebase/firebase';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { history } from './components/routes';
+import Loader from './components/Loader';
 
 
 
@@ -28,7 +29,7 @@ const renderApp = () => {
         hasRendered = true
     }
 }
-ReactDOM.render(<p>Loading</p>, document.getElementById('root'));
+ReactDOM.render(<Loader />, document.getElementById('root'));
 
 
 firebase.auth().onAuthStateChanged((user) => {
