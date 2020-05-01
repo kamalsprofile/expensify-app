@@ -1,13 +1,14 @@
 import React from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 import Home from './Home';
-import Help from './help';
+
 import CreateExpense from './createExpense';
 import EditExpense from './editExpense';
 import LogIn from './logIn';
 import { createBrowserHistory } from 'history/esm/history';
 import PrivateRoute from './privateRoutes'
 import PublicRoute from './publicRutes';
+import NotFound from './notFound';
 
 
 
@@ -21,7 +22,7 @@ const Routes = () => {
                 <PrivateRoute path="/dashboard" component={Home} />
                 <PrivateRoute path="/CreateExpense" component={CreateExpense} />
                 <PrivateRoute path="/edit/:id" component={EditExpense} />
-                <PrivateRoute path="/help" component={Help} />
+                <PrivateRoute component={NotFound} />
             </Switch>
 
 
