@@ -12,7 +12,7 @@ class LogIn extends Component {
                     <p>Control your expeses easily</p>
                     <a className='btn btn-login' href="!#" onClick={() => {
                         this.props.startLogin()
-                        // this.props.history.push("/dashboard")
+                        this.props.history.push("/dashboard")
                     }}>Log In</a>
                 </div>
 
