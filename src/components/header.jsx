@@ -12,7 +12,7 @@ const Header = ({ logOut }) => {
                     <Link className="logo" to="/dashboard" >
                         <h1>Expensify</h1>
                     </Link>
-                    <a className="btn-log-out" href="!#" onClick={logOut}>Log Out</a>
+                    <a className="btn-log-out" onClick={logOut}>Log Out</a>
 
                 </div>
 

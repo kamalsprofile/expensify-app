@@ -10,7 +10,7 @@ class LogIn extends Component {
                 <div className="login-box">
                     <h1 className="login-layout__title">Expensify App</h1>
                     <p>Control your expeses easily</p>
-                    <a className='btn btn-login' href="!#" onClick={() => {
+                    <a className='btn btn-login' onClick={() => {
                         this.props.startLogin()
                         this.props.history.push("/dashboard")
                     }}>Log In</a>
