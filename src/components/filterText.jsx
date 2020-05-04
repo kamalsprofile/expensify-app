@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { setFilterText } from '../actions/filters'
 import TextField from '@material-ui/core/TextField';
 import {
-    fade,
+    //fade,
     ThemeProvider,
-    withStyles,
+    //withStyles,
     makeStyles,
     createMuiTheme,
 } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 
-const CssTextField = withStyles({
+/* const CssTextField = withStyles({
     root: {
         '& label.Mui-focused': {
             color: 'green',
@@ -20,7 +20,8 @@ const CssTextField = withStyles({
             borderColor: 'green',
         },
     }
-})(TextField);
+})(TextField); */
+
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',

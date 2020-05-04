@@ -5,7 +5,7 @@ import App from './App';
 import Store from './configureStore/store';
 import { startSetExpenses } from './actions/expenses';
 import { login, logout } from './actions/auth';
-import getVisibleExpenses from './selectors/expenses';
+//import getVisibleExpenses from './selectors/expenses';
 import { firebase } from './firebase/firebase';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';

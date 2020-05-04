@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
-import Header from './header';
+//import Header from './header';
 
 export const PublicRoute = ({ isAuthentecated, component: Component, ...rest }) => {
     return (

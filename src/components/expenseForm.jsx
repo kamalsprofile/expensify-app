@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css'
-import Button from '@material-ui/core/Button';
+//import Button from '@material-ui/core/Button';
 
 
 class ExpenseForm extends Component {
@@ -70,7 +70,7 @@ class ExpenseForm extends Component {
                     {this.state.error && <p>{this.state.error}</p>}
                     <div className="form-Item">
                         <div className="group">
-                            <input type="text" type="text"
+                            <input type="text" 
                                 autoFocus
                                 placeholder="Description"
                                 value={this.state.description}
@@ -82,8 +82,7 @@ class ExpenseForm extends Component {
                     </div>
                     <div className="form-Item">
                         <div className="group">
-                            <input type="text" type="text"
-                                type="text"
+                            <input type="text" 
                                 placeholder="Amount"
                                 value={this.state.amount}
                                 onChange={this.amountChange} />
@@ -95,7 +94,7 @@ class ExpenseForm extends Component {
 
                     <div className="form-Item">
                         <div className="group">
-                            <input type="text" type="text"
+                            <input type="text" 
                                 placeholder="Add note (optional)"
                                 onChange={this.noteCahnge}
                                 value={this.state.note} />
@@ -119,7 +118,7 @@ class ExpenseForm extends Component {
 
                     </div>
                     <div className="btn-expense">
-                        <a className="btn-form-expense" onClick={this.formSubmitted} >{this.state.isUpdate}</a>
+                        <a className="btn-form-expense" href="!#" onClick={this.formSubmitted} >{this.state.isUpdate}</a>
                     </div>
 
                 </form>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import visibleExpenses from '../selectors/expenses'
 import getTotalAmount from '../selectors/totalExpenses'

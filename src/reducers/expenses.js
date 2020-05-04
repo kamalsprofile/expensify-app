@@ -10,11 +10,11 @@ export default (state = defaultExpensesState, action) => {
             ]
         case 'REMOVE_EXPENSE':
             return state.filter((item) => {
-                return item.id != action.id
+                return item.id !== action.id
             });
         case 'EDIT_EXPENSE':
             return state.map((expense) => {
-                if (expense.id == action.id) {
+                if (expense.id === action.id) {
                     console.log(action.updates)
                     return {
                         ...expense,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { sortByAmount, sortByDate, sortByAlpha } from '../actions/filters'
 import FormControl from '@material-ui/core/FormControl';
@@ -6,14 +6,14 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import { green } from '@material-ui/core/colors';
 import {
-    fade,
+    //fade,
     ThemeProvider,
-    withStyles,
+    //withStyles,
     makeStyles,
     createMuiTheme,
 } from '@material-ui/core/styles';
 
-
+/* 
 const CssSelect = withStyles({
     root: {
         '& label.Mui-focused': {
@@ -23,7 +23,7 @@ const CssSelect = withStyles({
             borderColor: 'green',
         },
     }
-})(Select);
+})(Select); */
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',

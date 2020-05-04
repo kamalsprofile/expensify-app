@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ExpenseForm from './expenseForm';
 import { connect } from 'react-redux';
 import { startEditExpense, startRemoveExpense } from '../actions/expenses'
@@ -25,7 +25,7 @@ const EditExpense = (props) => {
                 }}
             />
             <div className="btn-expense">
-                <a className="btn-form-expense" style={{ background: "red" }} onClick={() => {
+                <a className="btn-form-expense" href="!#" style={{ background: "red" }} onClick={() => {
                     const id = props.match.params.id
                     props.dispatch(startRemoveExpense({ id }))
                     props.history.push("/dashboard")
