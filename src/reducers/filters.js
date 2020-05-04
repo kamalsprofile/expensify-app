@@ -2,8 +2,8 @@ import moment from 'moment'
 const defaultFiltersState = {
     text: "",
     sortBy: "amount",
-    startDate: moment().startOf('month'),
-    endDate: moment().endOf('month')
+    startDate: moment().startOf('year'),
+    endDate: moment().endOf('year')
 }
 export default (state = defaultFiltersState, action) => {
     switch (action.type) {

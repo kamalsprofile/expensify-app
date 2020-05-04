@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import Header from './header';
+import Footer from './footer'
 
 export const PrivateRoute = ({ isAuthentecated, component: Component, ...rest }) => {
     return (
@@ -16,6 +17,7 @@ export const PrivateRoute = ({ isAuthentecated, component: Component, ...rest })
                         <Redirect to="/" />
                     )
             )} />
+            <Footer />
         </div>
 
     );
